@@ -6,4 +6,6 @@ import com.javapoint.server.main.entity.EmpDemo;
 
 public interface EmpDemoRepo extends JpaRepository<EmpDemo, Integer>{
 
+	EmpDemo findByEmail(String email);
+
 }

@@ -22,12 +22,16 @@
 	<input type="hidden" th:field="*{id}">
 		<input type="text" th:field="*{name}"
 			class="form-control mb-4 col-4" placeholder="Name">
+			<p th:if="${#fields.hasErrors('name')}" th:errors = *{name} class = "alert alert-danger"></p>
 		<input type="email" th:field="*{email}"
 			class="form-control mb-4 col-4" placeholder="Email">
+			<p th:if="${#fields.hasErrors('email')}" th:errors = *{email}></p>
 		<input type="number" pattern=".{10}" title="Enter valid Number" th:field="*{mobileNo}"
 			class="form-control mb-4 col-4" placeholder="Mobile Number">
+			<p th:if="${#fields.hasErrors('mobileNo')}" th:errors = *{mobileNo} class = "alert alert-danger"></p>
 		<input type="date" th:field="*{dob}"
 			class="form-control mb-4 col-4" placeholder="DOB">
+			<p th:if="${#fields.hasErrors('dob')}" th:errors = *{dob} class = "alert alert-danger"></p>
 		<button type="submit" class="btn btn-info col-2">Save</button>
 	</form>
 	<hr>

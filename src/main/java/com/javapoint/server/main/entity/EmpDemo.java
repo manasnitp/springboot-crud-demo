@@ -3,6 +3,8 @@ package com.javapoint.server.main.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class EmpDemo {
@@ -10,10 +12,17 @@ public class EmpDemo {
 	@Id
 	@GeneratedValue
 	private int id;
+	
+	@NotBlank(message = "Name cannot will empty")
 	private String name;
 	
+	@NotBlank(message = "Email cannot will empty")
 	private String email;
+	
+	@NotBlank(message = "Mobile Number is compulsory")
 	private String mobileNo;
+	
+	@NotBlank(message = "DOB**")
 	private String dob;
 	
 	public EmpDemo() {
